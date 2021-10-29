@@ -1,0 +1,31 @@
+.movieInfo {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+div {
+  padding: 20px;
+  text-align: center;
+}
+
+a {
+  border-radius: 5px;
+  border: 1px solid grey;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.text {
+  background-color: white;
+}
+
+.details {
+  margin-top: 160px;
+  text-align: left;
+}
+
+img {
+  border-radius: 5px;
+  border: 2px solid mintcream;
+}
+

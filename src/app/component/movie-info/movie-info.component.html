@@ -1,0 +1,16 @@
+<div [className]="'movieInfo'">
+  <div>
+    <img [src]="baseUrl+movieInfo.poster_path">
+  </div>
+  <div [className]="'text'">
+    <h2>{{movieInfo.title}} </h2>
+    <hr>
+    <p>{{movieInfo.overview}}</p>
+    <hr>
+    <p> Data of release: {{movieInfo.release_date}}. Original language: {{movieInfo.original_language}}</p>
+
+    <div [className]="'details'">
+      <hr>
+      <a [routerLink]="''">back to movie list</a></div>
+  </div>
+</div>

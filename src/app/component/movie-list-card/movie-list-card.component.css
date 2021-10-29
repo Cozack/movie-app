@@ -1,0 +1,45 @@
+div {
+  width: fit-content;
+  margin-bottom: 30px;
+  height: 480px;
+  text-align: center;
+  padding: 8px;
+  background: gold;
+  box-shadow: 0 10em 5em -5em orangered inset;
+  border: 3px solid orangered;
+  animation: shadow 3s infinite;
+}
+
+@keyframes shadow {
+  50% {
+    background: pink;
+    box-shadow: 0 10em 5em -5em purple inset;
+    border: 3px solid purple;
+  }
+}
+
+
+h4 {
+  width: 210px;
+  padding: 5px;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: small-caps;
+  font-weight: bold;
+
+}
+
+hr {
+  border: none;
+  color: #050505;
+  background-color: #0a0a0a;
+  height: 1px;
+  margin: 0px 20px;
+}
+
+
+
+
+
