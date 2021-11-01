@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-search-menu',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-menu.component.css']
 })
 export class SearchMenuComponent implements OnInit {
+
+  @Output() filterChange = new EventEmitter<any>();
 
   constructor() { }
 

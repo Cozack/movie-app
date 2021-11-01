@@ -12,6 +12,9 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { MoviesListComponent } from './component/movies-list/movies-list.component';
 import { MovieInfoComponent } from './component/movie-info/movie-info.component';
 import { MovieComponent } from './component/movie/movie.component';
+import { FooterComponent } from './component/footer/footer.component';
+import {MatIconModule} from "@angular/material/icon";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { MovieComponent } from './component/movie/movie.component';
     MoviesListComponent,
     MovieInfoComponent,
     MovieComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +33,8 @@ import { MovieComponent } from './component/movie/movie.component';
     NgxPaginationModule,
     AppRoutingModule,
     NgbModule,
+    MatIconModule,
+    MatCardModule,
 
   ],
   providers: [],

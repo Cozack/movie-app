@@ -1,3 +1,7 @@
+<app-search-menu (filterChange)="changeSelection($event)"></app-search-menu>
 <app-movie *ngFor="let movies of moviesData" [movie]="movies">
 </app-movie>
+<div class="clearfix">
+  <app-footer [pager]="pager" (changePage)="changePage($event)"></app-footer>
+</div>
 
