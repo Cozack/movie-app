@@ -7,5 +7,5 @@ import {IMovieInfo} from "../models";
 })
 export class DataTransferService {
 
-  store:BehaviorSubject<IMovieInfo> = new BehaviorSubject<IMovieInfo>({} as any)
+  store: BehaviorSubject<IMovieInfo> = new BehaviorSubject<IMovieInfo>({} as any)
 }

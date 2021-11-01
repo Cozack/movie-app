@@ -1,8 +1,9 @@
 <div class="header">
-  <a class="header_title" [routerLink]="''"><img class="logo_img" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bestmovie_Logo_black.png" alt=""></a>
+  <a class="header_title"><img [routerLink]="''" class="logo_img" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bestmovie_Logo_black.png" alt=""></a>
   <div class="form-check form-switch">
     <input ngModel class="form-check-input" type="checkbox" role="switch" [checked]="!themeColor" (change)="themeSwitcher($event.target)"  id="flexSwitchCheckDefault">
     <label class="form-check-label" for="flexSwitchCheckDefault">{{themeName}}</label>
   </div>
 </div>
 <app-search-menu></app-search-menu>
+

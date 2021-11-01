@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DataTransferService} from "../../services/data-transfer.service";
+import {Router} from "@angular/router";
+import {IMovieInfo} from "../../models";
 
 @Component({
   selector: 'app-movie-info',
@@ -7,13 +8,14 @@ import {DataTransferService} from "../../services/data-transfer.service";
   styleUrls: ['./movie-info.component.css']
 })
 export class MovieInfoComponent implements OnInit {
-  movieInfo: any;
-  baseUrl = 'https://www.themoviedb.org/t/p/w220_and_h330_face';
 
-  constructor(private dataTransfer:DataTransferService) { }
+  aboutInfo: IMovieInfo;
+
+  constructor(private router: Router) {
+    this.aboutInfo = this.router.getCurrentNavigation()?.extras.state as IMovieInfo
+  }
 
   ngOnInit(): void {
-    this.movieInfo = this.dataTransfer.store.getValue();
   }
 
 }
