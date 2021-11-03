@@ -11,8 +11,7 @@ export class MovieComponent implements OnInit {
 @Input()
 movie: IMovieInfo
 
-
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

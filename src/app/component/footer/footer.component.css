@@ -1,13 +1,14 @@
-footer {
-  text-align: center;
+.paginationContainer{
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  justify-content: center;
 }
-
-.pagination {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.pagination li {
-  display: inline;
+.paginationContainer button {
+  cursor: pointer;
+  background-color: #404040;
+  color: white;
+  margin: 8px 6px;
+  border-radius: 5px;
+  padding: 5px;
 }

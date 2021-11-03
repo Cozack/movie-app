@@ -1,11 +1,21 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
-import {IMovieInfo} from "../models";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataTransferService {
 
-  store: BehaviorSubject<IMovieInfo> = new BehaviorSubject<IMovieInfo>({} as any)
+  store = new BehaviorSubject<any>([] )
+
+  constructor() {
+  }
+
+  getState() {
+    return this.store.getValue()
+  }
+
+  setState(state:any) {
+    this.store.next(state)
+  }
 }

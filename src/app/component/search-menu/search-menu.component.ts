@@ -1,4 +1,7 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {IMovieInfo} from "../../models";
+import movies from "../../_data/movies.json";
+import {SearchService} from "../../services/search.service";
 
 @Component({
   selector: 'app-search-menu',
@@ -6,11 +9,16 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./search-menu.component.css']
 })
 export class SearchMenuComponent implements OnInit {
+  moviesData:IMovieInfo[] = movies
 
-  @Output() filterChange = new EventEmitter<any>();
+  constructor(private searchService:SearchService) {
 
-  constructor() { }
+  }
+
 
   ngOnInit(): void {
+this.searchService.getMoviesByName('Halloween Kills').subscribe(value => console.log(value))
   }
+
+
 }

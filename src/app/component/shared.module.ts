@@ -39,27 +39,28 @@ import { NgModule } from '@angular/core';
     MatInputModule,
     MatGridListModule
   ],
-  exports: [
-    MatCommonModule,
-    MatMenuModule,
-    MatSidenavModule,
-    MatTabsModule,
-    MatChipsModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
-    MatSelectModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatListModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatInputModule,
-    MatGridListModule
-  ],
+    exports: [
+        MatCommonModule,
+        MatMenuModule,
+        MatSidenavModule,
+        MatTabsModule,
+        MatChipsModule,
+        MatProgressSpinnerModule,
+        MatProgressBarModule,
+        MatSelectModule,
+        MatButtonToggleModule,
+        MatCardModule,
+        MatToolbarModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatListModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatInputModule,
+        MatGridListModule,
+    ],
   providers: [],
-  declarations: []
+  declarations: [
+  ]
 })
 export class SharedModule {}

@@ -9,9 +9,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./movies-list.component.css']
 })
 export class MoviesListComponent implements OnInit {
-
-  pager = { currentPage: 1, totalPages: 0};
-  options = { page: 1 };
   moviesData:IMovieInfo[] = movies;
 
 
@@ -20,14 +17,4 @@ export class MoviesListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeSelection(options:any) {
-    this.pager.currentPage = 1;
-    options.page = 1;
-  }
-
-  changePage(pageno:any) {
-    this.pager.currentPage = pageno;
-    this.options.page = pageno;
-
-  }
 }

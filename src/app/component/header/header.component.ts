@@ -9,7 +9,9 @@ export class HeaderComponent implements OnInit {
   themeName = 'Black'
   themeColor: any
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
@@ -28,4 +30,5 @@ export class HeaderComponent implements OnInit {
       this.themeColor = false
     }
   }
+
 }
