@@ -1,4 +1,6 @@
 <app-search-menu></app-search-menu>
+<input #input (input)="search(input)" name="input" type="text">
+
 <div class="over_main">
   <app-movie *ngFor="let movies of moviesData" [movie]="movies">
   </app-movie>

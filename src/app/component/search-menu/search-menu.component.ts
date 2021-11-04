@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {IMovieInfo} from "../../models";
 import movies from "../../_data/movies.json";
 import {SearchService} from "../../services/search.service";
+import {ALLMOVIES} from "../../moviesList";
 
 @Component({
   selector: 'app-search-menu',
@@ -9,7 +10,8 @@ import {SearchService} from "../../services/search.service";
   styleUrls: ['./search-menu.component.css']
 })
 export class SearchMenuComponent implements OnInit {
-  moviesData:IMovieInfo[] = movies
+  moviesData = ALLMOVIES
+  movie:any
 
   constructor(private searchService:SearchService) {
 
@@ -17,8 +19,9 @@ export class SearchMenuComponent implements OnInit {
 
 
   ngOnInit(): void {
-this.searchService.getMoviesByName('Halloween Kills').subscribe(value => console.log(value))
+
   }
+
 
 
 }

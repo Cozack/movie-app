@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import movies from '../../_data/movies.json'
-import {IMovieInfo} from "../../models";
-import {Router} from "@angular/router";
+import {ALLMOVIES} from "../../moviesList";
 
 @Component({
   selector: 'app-movies-list',
@@ -9,12 +7,21 @@ import {Router} from "@angular/router";
   styleUrls: ['./movies-list.component.css']
 })
 export class MoviesListComponent implements OnInit {
-  moviesData:IMovieInfo[] = movies;
-
+  moviesData = ALLMOVIES;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(str?:string):void {
+
   }
 
+
+  getUserName(name:any) {
+     this.moviesData = (this.moviesData.filter(value => value.name.includes(name)));
+
+  }
+
+  search(input: any) {
+    this.getUserName(input)
+  }
 }
