@@ -11,17 +11,17 @@ export class MoviesListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(str?:string):void {
+  ngOnInit():void {
 
   }
 
 
   getUserName(name:any) {
-     this.moviesData = (this.moviesData.filter(value => value.name.includes(name)));
+     this.moviesData = (this.moviesData.filter(value => value.name.toLowerCase().includes(name)));
 
   }
 
   search(input: any) {
-    this.getUserName(input)
+    this.getUserName(input.value.toLowerCase())
   }
 }
