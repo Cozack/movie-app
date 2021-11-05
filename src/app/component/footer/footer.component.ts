@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ALLMOVIES} from "../../moviesList";
 
 @Component({
   selector: 'app-footer',

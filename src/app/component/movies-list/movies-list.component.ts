@@ -7,7 +7,9 @@ import {ALLMOVIES} from "../../moviesList";
   styleUrls: ['./movies-list.component.css']
 })
 export class MoviesListComponent implements OnInit {
-  moviesData = ALLMOVIES;
+  moviesData  = ALLMOVIES;
+  filteredString?: string;
+  sortMenu: '';
 
   constructor() { }
 
@@ -15,13 +17,23 @@ export class MoviesListComponent implements OnInit {
 
   }
 
+  //
+  // getUserName(name:string) {
+  //    this.moviesData = (this.moviesData.filter(value => value.name.toLowerCase().includes(name)));
+  //
+  // }
 
-  getUserName(name:any) {
-     this.moviesData = (this.moviesData.filter(value => value.name.toLowerCase().includes(name)));
+ //  search(input: any) {
+ //    this.getUserName(input.value.toLowerCase())
+ //  }
+ //
+ // sortByName():any {
+ //   this.moviesData = this.moviesData.sort((a:any, b:any) => {
+ //     console.log(a-b)
+ //     return a - b;
+ //   }
+ //   )
+ // }
 
-  }
 
-  search(input: any) {
-    this.getUserName(input.value.toLowerCase())
-  }
 }

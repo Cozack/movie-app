@@ -15,7 +15,7 @@ export const ALLMOVIES: IMovieInfo[] = [
     name: "Free Guy",
     id: 2,
     title: "A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.",
-    year: 2020,
+    year: 2019,
     cash_fees: 12000000,
     data_create: "2021-01-07"
   },
@@ -69,7 +69,7 @@ export const ALLMOVIES: IMovieInfo[] = [
     name: "The Addams Family 2",
     id: 8,
     title: "The Addams get tangled up in more wacky adventures and find themselves involved in hilarious run-ins with all sorts of unsuspecting characters.",
-    year: 2021,
+    year: 2017,
     cash_fees: 23500000,
     data_create: "2021-01-01"
   }

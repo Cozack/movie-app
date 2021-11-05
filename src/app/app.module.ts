@@ -14,6 +14,8 @@ import { MovieComponent } from './component/movie/movie.component';
 import { FooterComponent } from './component/footer/footer.component';
 import {SharedModule} from "./component/shared.module";
 import {FormsModule} from "@angular/forms";
+import { OrderByPipe } from './Pipes/order-by.pipe';
+import { SearchPipe } from './Pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import {FormsModule} from "@angular/forms";
     MovieInfoComponent,
     MovieComponent,
     FooterComponent,
+    OrderByPipe,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
