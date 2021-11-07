@@ -1,9 +1,10 @@
 <div class="main-content">
   <mat-card class="example-card"><h3>{{movie.name}}</h3>
-    <img mat-card-image [src]="movie.poster_url" class="card-img" [alt]="movie.name">
+    <img mat-card-image [src]="movie.poster_url" [style.background-image]="'url(' + movie.poster_url + ')'" class="card-img" [alt]="movie.name">
    <mat-card-content>
     <p class="ellipsis">{{movie.title}}</p>
     <button (click)="goToDetails()">Details</button>
    </mat-card-content>
   </mat-card>
 </div>
+

@@ -1,16 +1,23 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/observable/of';
-import {ALLMOVIES} from "../moviesList";
+import {IMovieInfo} from "../models";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MoviesService {
-allMovies = ALLMOVIES
   constructor() {
   }
 
- public getMovies():any[] {
-    return this.allMovies
- }
+  addMovie(movie:IMovieInfo) {
+    let movies = [];
+    if (localStorage.getItem('Movies')) {
+      movies = JSON.parse(localStorage.getItem('Movies') || '{}');
+      movies = [movie, ...movies]
+    } else {
+      movies = [movie];
+    }
+    localStorage.setItem('Movies', JSON.stringify(movies));
+
+  }
 }

@@ -1,20 +1,21 @@
-<app-search-menu></app-search-menu>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="input-group mb-3">
-     Sort By:
-      <select class="btn btn-secondary btn btn-success" id="inputGroupSelect01" [(ngModel)]="sortMenu">
+     <label>Sort By: &nbsp;</label>
+    <select class="btn btn-secondary btn btn-success "  id="inputGroupSelect01" [(ngModel)]="sortMenu">
         <option value="name">name</option>
         <option value="year">year</option>
         <option value="data_create">data</option>
     </select>
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filteredString">
-    <button type="button" class="btn btn-success">Add new movie</button>
+    <button [routerLink]="'add-new-movie'" type="button" class="btn btn-success" >Add new movie</button>
   </div>
 </nav>
-<div class="over_main">
+<div class="over_main" >
   <app-movie *ngFor="let movies of moviesData | orderBy:sortMenu | search:filteredString" [movie]="movies">
+
   </app-movie>
 </div>
 <div class="clearfix">
   <app-footer></app-footer>
 </div>
+<router-outlet></router-outlet>

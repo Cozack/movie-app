@@ -11,12 +11,12 @@ export class MovieComponent implements OnInit {
 @Input()
 movie: IMovieInfo
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
   goToDetails(): void {
-  this.router.navigate([this.movie.id], {state: this.movie})
+  this.router.navigate(['movie' ,this.movie.id], {relativeTo:this.activatedRoute, state: this.movie})
   }
 }

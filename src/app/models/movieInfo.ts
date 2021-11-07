@@ -1,10 +1,10 @@
 export interface IMovieInfo {
-  poster_url:string;
+  poster_url?:string;
   name:string;
-  id:number;
-  title:string;
+  id?:number;
+  title?:string;
   year:number;
-  cash_fees:number;
-  data_create:string;
+  cash_fees?:number;
+  data_create?:string;
   favourite?:boolean;
 }

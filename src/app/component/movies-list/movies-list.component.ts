@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ALLMOVIES} from "../../moviesList";
 
 @Component({
@@ -9,31 +9,12 @@ import {ALLMOVIES} from "../../moviesList";
 export class MoviesListComponent implements OnInit {
   moviesData  = ALLMOVIES;
   filteredString?: string;
-  sortMenu: '';
+  sortMenu : '';
+
 
   constructor() { }
 
   ngOnInit():void {
 
   }
-
-  //
-  // getUserName(name:string) {
-  //    this.moviesData = (this.moviesData.filter(value => value.name.toLowerCase().includes(name)));
-  //
-  // }
-
- //  search(input: any) {
- //    this.getUserName(input.value.toLowerCase())
- //  }
- //
- // sortByName():any {
- //   this.moviesData = this.moviesData.sort((a:any, b:any) => {
- //     console.log(a-b)
- //     return a - b;
- //   }
- //   )
- // }
-
-
 }
