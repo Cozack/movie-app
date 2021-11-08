@@ -4,7 +4,7 @@ export interface IMovieInfo {
   id?:number;
   title?:string;
   year:number;
-  cash_fees?:number;
-  data_create?:string;
+  cash_fees?:any;
+  date?:any;
   favourite?:boolean;
 }

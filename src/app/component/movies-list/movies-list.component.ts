@@ -1,5 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {ALLMOVIES} from "../../moviesList";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-movies-list',
@@ -7,14 +6,18 @@ import {ALLMOVIES} from "../../moviesList";
   styleUrls: ['./movies-list.component.css']
 })
 export class MoviesListComponent implements OnInit {
-  moviesData  = ALLMOVIES;
+
+  storage = JSON.parse(<string>localStorage.getItem('Movies'))
+
   filteredString?: string;
-  sortMenu : '';
+  sortMenu: '';
 
 
-  constructor() { }
+  constructor() {
+  }
 
-  ngOnInit():void {
+  ngOnInit(): void {
+
 
   }
 }

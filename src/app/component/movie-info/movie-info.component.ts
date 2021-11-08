@@ -18,4 +18,9 @@ export class MovieInfoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteMovie(id: any) {
+    const items = JSON.parse(<string>localStorage.getItem('Movies'));
+    const filtered = items.filter((item:any) => item.id !== id);
+    localStorage.setItem('Movies', JSON.stringify(filtered));
+  }
 }

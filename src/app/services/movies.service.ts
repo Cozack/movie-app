@@ -20,4 +20,15 @@ export class MoviesService {
     localStorage.setItem('Movies', JSON.stringify(movies));
 
   }
+
+
+  isEmptyLocalStorage(data:any) {
+    if (!localStorage.getItem('Movies')) {
+      console.log('no movies');
+      localStorage.setItem('Movies', JSON.stringify(data))
+
+    } else {
+      data = JSON.parse(localStorage.getItem('Movies') || '{}');
+    }
+  }
 }

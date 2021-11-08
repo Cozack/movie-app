@@ -1,32 +1,30 @@
 import {Component, OnInit} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {ALLMOVIES} from "../../moviesList";
 import {MoviesService} from "../../services/movies.service";
 import {IMovieInfo} from "../../models";
-import value from "*.json";
 import {Observable, Subscriber} from "rxjs";
-import {error} from "@angular/compiler/src/util";
 
 @Component({
   selector: 'app-new-movie-form',
   templateUrl: './new-movie-form.component.html',
   styleUrls: ['./new-movie-form.component.css'],
 })
+
 export class NewMovieFormComponent implements OnInit {
-  movies = ALLMOVIES;
+  // movies = ALLMOVIES;
   movieForm: FormGroup;
   movie: IMovieInfo;
   movieSubmitted:boolean;
   myImage:any;
+  generationId = Math.floor(Math.random() * 999) + 1
+  today:any= new Date()/*.toLocaleDateString('uk-UA')*!/*/
 
-  constructor(private fb:FormBuilder, private movieService:MoviesService) {}
+  constructor(private fb:FormBuilder, private movieService:MoviesService) {
+  }
+
+
 
   ngOnInit(): void {
-// this.movieForm = new FormGroup({
-//   name:new FormControl(null, Validators.required),
-//   year:new FormControl(null, Validators.required),
-//   cash_fees:new FormControl(null, Validators.required)
-// })
     this.createMovieForm()
   }
 
@@ -35,7 +33,8 @@ export class NewMovieFormComponent implements OnInit {
       name:[null, Validators.required],
       year:[null, Validators.required],
       cash_fees:[null, Validators.required],
-      poster_url:[null, Validators.required]
+      poster_url:[null, Validators.required],
+      date:[null, Validators.required]
     })
   }
   get movieName() {
@@ -47,19 +46,15 @@ export class NewMovieFormComponent implements OnInit {
   get movieCashFees() {
     return this.movieForm.get('cash_fees') as FormControl;
   }
-  get movieImg() {
-    return this.movieForm.get('poster_url') as FormControl;
-  }
+
 
   onSumbmit() {
     console.log(this.movieForm.value)
     this.movieSubmitted = true;
 
     if (this.movieForm.valid) {
-    // this.movie = Object.assign(this.movie, this.movieForm.value)
-    this.movieService.addMovie(this.movieData());
-    this.movies.push(this.movie)
-    this.movieForm.reset()
+      this.movieService.addMovie(this.movieData());
+      this.movieForm.reset()
       this.movieSubmitted = false;
     }
   }
@@ -68,13 +63,26 @@ movieData():IMovieInfo {
     return this.movie = {
       name:this.movieName.value,
       year:this.movieYear.value,
-      cash_fees:this.movieCashFees.value,
-      poster_url:this.myImage
+      cash_fees:this.numFormatter(this.movieCashFees.value),
+      poster_url:this.myImage,
+      id:this.generationId,
+      date: this.today.toString()
     }
 }
 
+  numFormatter(num:any) {
+    if(num > 999 && num < 1000000){
+      return (num/1000).toFixed(1) + 'K'; // convert to K for number from > 1000 < 1 million
+    }else if(num > 1000000){
+      return (num/1000000).toFixed(1) + 'M'; // convert to M for number from > 1 million
+    }else if(num < 900){
+      return num; // if value < 1000, nothing to do
+    }
+  }
+
 
 //////////////////////////////// GET NORMAL PATH OF IMAGES
+
   onChange($event:Event) {
 const file = ($event.target as HTMLInputElement).files?.[0];
 console.log(file);
@@ -106,4 +114,5 @@ fileReader.onerror = (error) => {
   subscriber.complete();
 }
   }
+
 }

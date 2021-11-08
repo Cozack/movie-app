@@ -5,4 +5,5 @@
   <h4>{{aboutInfo?.cash_fees}}</h4>
   <p>{{aboutInfo?.title}}</p>
   <button [routerLink]="''">Back</button>
+  <button (click)="deleteMovie(aboutInfo.id)" [routerLink]="''">Delete</button>
 </div>

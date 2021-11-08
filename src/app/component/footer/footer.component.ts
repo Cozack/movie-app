@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ALLMOVIES} from "../../moviesList";
 
 @Component({
   selector: 'app-footer',
@@ -7,6 +6,7 @@ import {ALLMOVIES} from "../../moviesList";
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+
   constructor()  {
 
   }
