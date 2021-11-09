@@ -17,28 +17,34 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
+import { WishListComponent } from './wish-list/wish-list.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {CommonModule} from "@angular/common";
+import {AppRoutingModule} from "../app-routing.module";
 
 @NgModule({
-    imports: [
-        MatCommonModule,
-        MatMenuModule,
-        MatSidenavModule,
-        MatTabsModule,
-        MatChipsModule,
-        MatProgressSpinnerModule,
-        MatProgressBarModule,
-        MatSelectModule,
-        MatButtonToggleModule,
-        MatCardModule,
-        MatToolbarModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatListModule,
-        MatButtonModule,
-        MatDialogModule,
-        MatInputModule,
-        MatGridListModule,
-    ],
+  imports: [
+    MatCommonModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatTabsModule,
+    MatChipsModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
+    MatSelectModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatListModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatInputModule,
+    MatGridListModule,
+    CommonModule,
+    AppRoutingModule,
+  ],
     exports: [
         MatCommonModule,
         MatMenuModule,
@@ -58,9 +64,12 @@ import { NgModule } from '@angular/core';
         MatDialogModule,
         MatInputModule,
         MatGridListModule,
+      MatCheckboxModule,
     ],
   providers: [],
   declarations: [
+
+    WishListComponent
   ]
 })
-export class SharedModule {}
+export class MatirialModule {}

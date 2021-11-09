@@ -11,7 +11,6 @@ import {Observable, Subscriber} from "rxjs";
 })
 
 export class NewMovieFormComponent implements OnInit {
-  // movies = ALLMOVIES;
   movieForm: FormGroup;
   movie: IMovieInfo;
   movieSubmitted:boolean;
@@ -76,7 +75,8 @@ movieData():IMovieInfo {
       cash_fees:this.numFormatter(this.movieCashFees.value),
       poster_url:this.myImage,
       id:this.generationId,
-      date: this.today.toString()
+      date: this.today.toString(),
+      wishlist:false
     }
 }
 

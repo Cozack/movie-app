@@ -11,7 +11,7 @@ import { MoviesListComponent } from './component/movies-list/movies-list.compone
 import { MovieInfoComponent } from './component/movie-info/movie-info.component';
 import { MovieComponent } from './component/movie/movie.component';
 import { FooterComponent } from './component/footer/footer.component';
-import {SharedModule} from "./component/shared.module";
+import {MatirialModule} from "./component/matirial.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { OrderByPipe } from './Pipes/order-by.pipe';
 import { SearchPipe } from './Pipes/search.pipe';
@@ -41,9 +41,10 @@ registerLocaleData(localeUa, 'uk');
         HttpClientModule,
         AppRoutingModule,
         NgbModule,
-        SharedModule,
+        MatirialModule,
         FormsModule,
         ReactiveFormsModule,
+
 
     ],
   providers: [MoviesService, {provide:LOCALE_ID, useValue:'uk'}],

@@ -1,8 +1,8 @@
 <div>
   <h3>{{aboutInfo?.name}}</h3>
   <img [src]="aboutInfo?.poster_url" [alt]="aboutInfo?.name">
-  <h4>{{aboutInfo?.year}}</h4>
-  <h4>{{aboutInfo?.cash_fees}}</h4>
+  <h4>рік випуску: {{aboutInfo?.year}}</h4>
+  <h4>касові збори: {{aboutInfo?.cash_fees}}</h4>
   <p>{{aboutInfo?.title}}</p>
   <button [routerLink]="''">Back</button>
   <button (click)="deleteMovie(aboutInfo.id)" [routerLink]="''">Delete</button>

@@ -7,10 +7,12 @@
         <option value="date">Date</option>
     </select>
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filteredString">
+    <button [routerLink]="'wish-list'" type="button" class="btn btn-secondary" >Wish List</button>
     <button [routerLink]="'add-new-movie'" type="button" class="btn btn-success" >Add new movie</button>
   </div>
 </nav>
-<div class="over_main" >
+
+<div class="over_main">
   <app-movie *ngFor="let movies of storage | orderBy:sortMenu | search:filteredString" [movie]="movies">
 
   </app-movie>
