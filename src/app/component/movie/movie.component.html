@@ -3,7 +3,7 @@
     <img mat-card-image [src]="movie.poster_url" [style.background-image]="'url(' + movie.poster_url + ')'" class="card-img" [alt]="movie.name">
    <mat-card-content>
     <p class="ellipsis">{{movie.title}}</p>
-     <h4>{{movie.date | date:'MMM d, y'}}</h4>
+     <h4>{{movie.date | date:'longDate'}}</h4>
     <button (click)="goToDetails()">Details</button>
    </mat-card-content>
   </mat-card>

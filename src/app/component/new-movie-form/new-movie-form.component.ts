@@ -17,7 +17,17 @@ export class NewMovieFormComponent implements OnInit {
   movieSubmitted:boolean;
   myImage:any;
   generationId = Math.floor(Math.random() * 999) + 1
-  today:any= new Date()/*.toLocaleDateString('uk-UA')*!/*/
+  today:any= new Date()/*.toLocaleDateString('uk-UA')*/
+  setTime:any= new Intl.DateTimeFormat('uk-UA').format(new Date());
+ date:any = new Date().toLocaleString('uk-UA', {
+   year:"numeric",
+   month:"long",
+   day:"numeric",
+   weekday:"long",
+   hour:"numeric",
+   minute:"numeric",
+   second:"numeric"
+ })
 
   constructor(private fb:FormBuilder, private movieService:MoviesService) {
   }
@@ -34,7 +44,7 @@ export class NewMovieFormComponent implements OnInit {
       year:[null, Validators.required],
       cash_fees:[null, Validators.required],
       poster_url:[null, Validators.required],
-      date:[null, Validators.required]
+      // date:[null, Validators.required]
     })
   }
   get movieName() {
