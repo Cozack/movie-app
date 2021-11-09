@@ -4,7 +4,7 @@ import {WishListService} from "../../services/wish-list.service";
 @Component({
   selector: 'app-wish-list',
   templateUrl: './wish-list.component.html',
-  styleUrls: ['./wish-list.component.css']
+  styleUrls: ['./wish-list.component.scss']
 })
 export class WishListComponent implements OnInit {
   movieFromWishList = JSON.parse(<string>localStorage.getItem('wishList'))

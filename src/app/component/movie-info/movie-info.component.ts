@@ -5,7 +5,7 @@ import {IMovieInfo} from "../../models";
 @Component({
   selector: 'app-movie-info',
   templateUrl: './movie-info.component.html',
-  styleUrls: ['./movie-info.component.css']
+  styleUrls: ['./movie-info.component.scss']
 })
 export class MovieInfoComponent implements OnInit {
 

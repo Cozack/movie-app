@@ -7,7 +7,7 @@ import {Observable, Subscriber} from "rxjs";
 @Component({
   selector: 'app-new-movie-form',
   templateUrl: './new-movie-form.component.html',
-  styleUrls: ['./new-movie-form.component.css'],
+  styleUrls: ['./new-movie-form.component.scss'],
 })
 
 export class NewMovieFormComponent implements OnInit {

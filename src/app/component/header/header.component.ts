@@ -1,40 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {ThemeService} from "../../services/theme.service";
+import {FooterComponent} from "../footer/footer.component";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  themeName = 'White';
-  themeColor: any;
-  storedTheme:string | null = localStorage.getItem('theme-color');
+  isDarkMode: boolean;
 
-  constructor() {
-
+  constructor(private themeService: ThemeService) {
+    this.themeService.initTheme();
+    this.isDarkMode = this.themeService.isDarkMode();
   }
 
-  ngOnInit(): void {
+ngOnInit() {
+}
+
+  toggleDarkMode() {
+    this.isDarkMode = this.themeService.isDarkMode();
+
+    this.isDarkMode
+      ? this.themeService.update('light-mode')
+      : this.themeService.update('dark-mode');
   }
-
-  themeSwitcher(target:any):void {
-    if (target.checked) {
-      document.body.classList.remove('black')
-      document.body.classList.add('white')
-      // this.themeName = 'White'
-      localStorage.setItem('theme-color', 'white');
-      this.storedTheme = localStorage.getItem('theme-color');
-    }
-
-    else {
-      document.body.classList.remove('white')
-      document.body.classList.add('black')
-      localStorage.setItem('theme-color', 'black');
-      this.storedTheme = localStorage.getItem('theme-color');
-      // this.themeName = 'Black'
-      this.themeColor = false
-    }
-  }
-
 
 }

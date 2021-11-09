@@ -19,6 +19,8 @@ import {NewMovieFormComponent} from "./component/new-movie-form/new-movie-form.c
 import {MoviesService} from "./services/movies.service";
 import localeUa from '@angular/common/locales/uk';
 import {registerLocaleData} from "@angular/common";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 registerLocaleData(localeUa, 'uk');
@@ -35,18 +37,21 @@ registerLocaleData(localeUa, 'uk');
     NewMovieFormComponent,
 
   ],
-    imports: [
-        BrowserModule,
-        RouterModule,
-        HttpClientModule,
-        AppRoutingModule,
-        NgbModule,
-        MatirialModule,
-        FormsModule,
-        ReactiveFormsModule,
+  imports: [
+    BrowserModule,
+    RouterModule,
+    HttpClientModule,
+    AppRoutingModule,
+    NgbModule,
+    MatirialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSlideToggleModule,
+    BrowserAnimationsModule,
 
 
-    ],
+
+  ],
   providers: [MoviesService, {provide:LOCALE_ID, useValue:'uk'}],
   bootstrap: [AppComponent]
 })
