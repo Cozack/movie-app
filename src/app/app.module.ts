@@ -32,7 +32,7 @@ registerLocaleData(localeUa, 'uk');
     FooterComponent,
     OrderByPipe,
     SearchPipe,
-    NewMovieFormComponent
+    NewMovieFormComponent,
 
   ],
     imports: [
