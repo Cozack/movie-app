@@ -1,9 +1,33 @@
-<div>
-  <h3>{{aboutInfo?.name}}</h3>
-  <img [src]="aboutInfo?.poster_url" [alt]="aboutInfo?.name">
-  <h4>рік випуску: {{aboutInfo?.year}}</h4>
-  <h4>касові збори: {{aboutInfo?.cash_fees}}</h4>
-  <p>{{aboutInfo?.title}}</p>
-  <button [routerLink]="''">Back</button>
-  <button (click)="deleteMovie(aboutInfo.id)" [routerLink]="''">Delete</button>
+<!--<div>-->
+<!--  <h3>{{aboutInfo?.name}}</h3>-->
+<!--  <img [src]="aboutInfo?.poster_url" [alt]="aboutInfo?.name">-->
+<!--  <h4>рік випуску: {{aboutInfo?.year}}</h4>-->
+<!--  <h4>касові збори: {{aboutInfo?.cash_fees}}</h4>-->
+<!--  <p>{{aboutInfo?.title}}</p>-->
+<!--  <button [routerLink]="''">Back</button>-->
+<!--  <button (click)="deleteMovie(aboutInfo.id)" [routerLink]="''">Delete</button>-->
+<!--</div>-->
+
+<div class="main-movie-info">
+  <figure class="movie">
+    <div class="movie__hero">
+      <img [src]="aboutInfo?.poster_url" [alt]="aboutInfo?.name" class="movie__img">
+    </div>
+    <div class="movie__content">
+      <div class="movie__title">
+        <h1 class="heading__primary">{{aboutInfo?.name}}<i class="fas fa-fire"></i></h1>
+      </div>
+      <p class="movie__description">
+        {{aboutInfo?.title}}
+      </p>
+      <div class="movie__details">
+        <p class="movie__detail"><span class="icons icons-grey"><i class="fas fa-clock"></i> </span>рік
+          випуску: {{aboutInfo?.year}}</p>
+        <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-file-invoice-dollar"></i>
+        </span>касові збори: {{aboutInfo?.cash_fees}}</p>
+      </div>
+      <button [routerLink]="''" mat-flat-button color="primary" style="margin-bottom: 10px">Back</button>
+      <button (click)="deleteMovie(aboutInfo.id)" [routerLink]="''" mat-flat-button color="accent">Delete</button>
+    </div>
+  </figure>
 </div>

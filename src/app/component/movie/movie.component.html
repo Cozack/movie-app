@@ -1,11 +1,29 @@
-<div class="main-content">
-  <mat-card class="example-card"><h3>{{movie.name}}</h3>
-    <img mat-card-image [src]="movie.poster_url" [style.background-image]="'url(' + movie.poster_url + ')'" class="card-img" [alt]="movie.name">
-   <mat-card-content>
-     <h4>створено: {{movie.date | date:'longDate'}}</h4>
-    <button (click)="goToDetails()">Details</button>
-     <input type="button" (click)="addToWishList(movie)" value="Add to wish list" />
-   </mat-card-content>
-  </mat-card>
+<div class="card mb-3">
+  <img
+    [src]="movie.poster_url" [style.background-image]="'url(' + movie.poster_url + ')'" [alt]="movie.name"
+    class="card-img-top img-fluid"
+    style="width: 100%"
+  />
+  <div class="card-body" style="background-color: bisque">
+    <h5 class="card-title" style="color: blueviolet">{{ movie.name }}</h5>
+    <h6 class="card-subtitle text-muted mb-2" style="overflow: hidden">
+      дата створення: {{movie.date | date:'longDate'}}
+    </h6>
+         <div style="display: flex; justify-content: space-between">
+           <button  (click)="goToDetails()" class="details-btn">Details</button>
+           <div style="display: flex; justify-content: space-evenly">
+             <button style="border: none">
+               <i class="fas fa-heart  form-control" (click)="addToWishList(movie)"
+                   mat-raised-button
+                   matTooltip="Add to Wish List">
+               </i>
+             </button>
+             <button style="border: none">
+               <i class="fas fa-heartbeat form-control" (click)="deleteFromWishList(movie.id)"
+                   mat-raised-button
+                   matTooltip="Delete from Wish List" style="cursor: pointer">
+               </i>
+             </button></div>
+         </div>
+  </div>
 </div>
-

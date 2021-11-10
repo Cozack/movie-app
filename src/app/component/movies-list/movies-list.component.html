@@ -1,14 +1,29 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: rgba(255,253,127,0.87)!important">
   <div class="input-group mb-3">
-     <label style="font-weight: bold; color: #61699a">Sort By: &nbsp;</label>
-    <select class="btn btn-secondary btn btn-success "  id="inputGroupSelect01" [(ngModel)]="sortMenu">
+     <label style="font-weight: bold; color: #61699a; align-self: center; padding-left: 5px">Sort By: &nbsp;</label>
+    <select class="btn btn-secondary btn btn-success "  id="inputGroupSelect01" [(ngModel)]="sortMenu" style="margin-right: 10px">
         <option value="name">Name</option>
         <option value="year">Year</option>
         <option value="date">Date</option>
     </select>
+<!--    <mat-form-field appearance="fill">-->
+<!--      <mat-label>Sort By:</mat-label>-->
+<!--      <mat-select [(ngModel)]="sortMenu">-->
+<!--        <mat-option value="name">Name-->
+<!--        </mat-option>-->
+<!--        <mat-option value="year">Year-->
+<!--        </mat-option>-->
+<!--        <mat-option value="date">Date-->
+<!--        </mat-option>-->
+<!--      </mat-select>-->
+<!--    </mat-form-field>-->
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filteredString">
-    <button [routerLink]="'wish-list'" type="button" class="btn btn-secondary" >Wish List</button>
-    <button [routerLink]="'add-new-movie'" type="button" class="btn btn-success" >Add new movie</button>
+    <button [routerLink]="'wish-list'" type="button"
+            color="primary"
+            mat-raised-button matBadge="{{budgeCount()}}"
+            matBadgePosition="before"
+            matBadgeColor="accent" style="margin-left: 10px">Wish List</button>
+    <button [routerLink]="'add-new-movie'" type="button" class="btn btn-success" style="margin:0 10px 0 10px">Add new movie</button>
   </div>
 </nav>
 

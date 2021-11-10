@@ -21,6 +21,8 @@ import { WishListComponent } from './wish-list/wish-list.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {CommonModule} from "@angular/common";
 import {AppRoutingModule} from "../app-routing.module";
+import {MatBadgeModule} from "@angular/material/badge";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   imports: [
@@ -65,6 +67,8 @@ import {AppRoutingModule} from "../app-routing.module";
         MatInputModule,
         MatGridListModule,
       MatCheckboxModule,
+      MatBadgeModule,
+      MatTooltipModule,
     ],
   providers: [],
   declarations: [

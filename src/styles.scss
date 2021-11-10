@@ -4,56 +4,16 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.black{
-  background-color:black;
-}
-.white{
-  background-color: white;
-}
 /*________________________________________________________*/
 /* You can add global styles to this file, and also import other style files */
 
 
-* {
-  box-sizing: border-box;
-}
-
 .nav-right {
   position: absolute;
   right: 10px;
-}
-
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-
-.clearfix {
-  display: inline-block;
-}
-
-/* start commented backslash hack \*/
-
-* html .clearfix {
-  height: 1%;
-}
-
-.clearfix {
-  display: block;
-}
-
-/* close commented backslash hack */
-
-.container {
-  clear: both;
-  width: 90%;
-  margin: 0 auto;
 }
 
 .main-content {
@@ -82,17 +42,6 @@
 .disabled {
   pointer-events: none;
   opacity: 0.6;
-}
-
-@media only screen and (max-width: 1024px) {
-  .container {
-    width: 100%;
-    padding: 10px;
-  }
-  .main-content {
-    padding: 5px;
-    display: flex;
-  }
 }
 
 @media only screen and (max-width: 720px) {
@@ -148,11 +97,22 @@ $app-dark-theme: mat-dark-theme($mat-primary-palette, $mat-accent-palette);
   color: whitesmoke;
 }
 
+
 html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.ml-3 {
+  margin-left: 1rem;
 }

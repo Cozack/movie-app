@@ -20,4 +20,9 @@ export class MoviesListComponent implements OnInit {
 
 
   }
+
+  budgeCount():any {
+    let items = JSON.parse(<string>localStorage.getItem('wishList'));
+    return items.length
+  }
 }

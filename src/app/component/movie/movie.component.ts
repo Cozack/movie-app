@@ -10,7 +10,8 @@ import {WishListService} from "../../services/wish-list.service";
 })
 export class MovieComponent implements OnInit {
   @Input()
-  movie: IMovieInfo
+  movie: IMovieInfo;
+  isAddedToWishList:boolean=false
 
 
   constructor(private router: Router,
@@ -19,6 +20,7 @@ export class MovieComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   goToDetails(): void {
@@ -28,5 +30,19 @@ export class MovieComponent implements OnInit {
 
   addToWishList(product:any) {
     this.wishListService.addToWishList(product);
+  }
+
+  deleteFromWishList(id: any) {
+    this.wishListService.removeFromWishList(id)
+  }
+
+  inActiveWishListButton(id:any):boolean {
+    let items = JSON.parse(<string>localStorage.getItem('wishList'));
+    if ( items.filter((item: any) => item.id === id)) {
+
+     return   items = true
+    }
+    return items = false
+console.log(items)
   }
 }

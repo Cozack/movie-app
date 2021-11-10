@@ -1,14 +1,21 @@
-<div style="display: flex; flex-wrap: wrap">
-  <div *ngFor="let movie of movieFromWishList">
-    <mat-card class="example-card"><h3>{{movie.name}}</h3>
-      <img mat-card-image [src]="movie.poster_url" [style.background-image]="'url(' + movie.poster_url + ')'"
-           class="card-img" [alt]="movie.name">
-      <mat-card-content>
-        <h4>створено: {{movie.date | date:'longDate'}}</h4>
-      </mat-card-content>
-    </mat-card>
-    <button (click)="removeFromWishList(movie.id); refreshPage()">Remove from Wish List</button>
-
+<div class="wish-list-main-div">
+  <div class="card mb-3" *ngFor="let movie of movieFromWishList">
+  <img
+    [src]="movie.poster_url" [style.background-image]="'url(' + movie.poster_url + ')'" [alt]="movie.name"
+    class="card-img-top img-fluid"
+    style="width: 100%"
+  />
+  <div class="card-body" style="background-color: bisque">
+    <h5 class="card-title" style="color: blueviolet">{{ movie.name }}</h5>
+    <h6 class="card-subtitle text-muted mb-2" style="overflow: hidden">
+      дата створення: {{movie.date | date:'longDate'}}
+    </h6>
+    <div style="display: flex; justify-content: space-between">
+      <button (click)="removeFromWishList(movie.id); refreshPage()"
+              mat-flat-button color="accent">Remove from Wish List</button>
+      <button [routerLink]="''" mat-flat-button color="primary">Go BACK</button>
+    </div>
   </div>
 </div>
-<button [routerLink]="''">Go BACK</button>
+
+</div>

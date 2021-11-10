@@ -48,7 +48,7 @@ export const ALLMOVIES: IMovieInfo[] = [
     title: "After finding a host body in investigative reporter Eddie Brock, the alien symbiote must face a new enemy, Carnage, the alter ego of serial killer Cletus Kasady.",
     year: 2021,
     cash_fees: 5000000,
-    date: "2021-01-11",
+    date: "2021-22-01",
     wishlist: false
   },
   {
@@ -58,7 +58,7 @@ export const ALLMOVIES: IMovieInfo[] = [
     title: "A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.",
     year: 2020,
     cash_fees: 12000000,
-    date: "2021-01-07",
+    date: "2021-07-01",
     wishlist: false
   },
   {
@@ -68,7 +68,7 @@ export const ALLMOVIES: IMovieInfo[] = [
     title: "Minutes after Laurie Strode, her daughter Karen and granddaughter Allyson left masked monster Michael Myers caged and burning in Laurie's basement, Laurie is rushed to the hospital with life-threatening injuries, believing she finally killed her lifelong tormentor. But when Michael manages to free himself from Laurie's trap, his ritual bloodbath resumes. As Laurie fights her pain and prepares to defend herself against him, she inspires all of Haddonfield to rise up against their unstoppable monster. The Strode women join a group of other survivors of Michael's first rampage who decide to take matters into their own hands, forming a vigilante mob that sets out to hunt Michael down, once and for all.",
     year: 2021,
     cash_fees: 1500025,
-    date: "2020-01-11",
+    date: "2020-11-01",
     wishlist: false
   },
   {
