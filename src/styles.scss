@@ -7,51 +7,6 @@
   box-sizing: border-box;
 }
 
-/*________________________________________________________*/
-/* You can add global styles to this file, and also import other style files */
-
-
-.nav-right {
-  position: absolute;
-  right: 10px;
-}
-
-.main-content {
-  padding: 20px;
-  justify-content: center;
-  align-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  flex-flow: row wrap;
-}
-
-.ellipsis {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  width: 100%;
-  white-space: nowrap;
-  display: block;
-}
-
-.example-card {
-  width: 350px;
-  margin: 10px;
-  cursor: pointer;
-}
-
-.disabled {
-  pointer-events: none;
-  opacity: 0.6;
-}
-
-@media only screen and (max-width: 720px) {
-  .mat-card-subtitle,
-  .mat-card-content,
-  .mat-card-header .mat-card-title {
-    font-size: 16px;
-  }
-}
-
 .fa-heart {
   color:deeppink;
   cursor: pointer;

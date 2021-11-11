@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import 'rxjs/add/observable/of';
 import {IMovieInfo} from "../models";
 
@@ -9,7 +9,7 @@ export class MoviesService {
   constructor() {
   }
 
-  addMovie(movie:IMovieInfo) {
+  addMovie(movie: IMovieInfo) {
     let movies = [];
     if (localStorage.getItem('Movies')) {
       movies = JSON.parse(localStorage.getItem('Movies') || '{}');
@@ -18,11 +18,9 @@ export class MoviesService {
       movies = [movie];
     }
     localStorage.setItem('Movies', JSON.stringify(movies));
-
   }
 
-
-  isEmptyLocalStorage(data:any) {
+  isEmptyLocalStorage(data: any) {
     if (!localStorage.getItem('Movies')) {
       console.log('no movies');
       localStorage.setItem('Movies', JSON.stringify(data))

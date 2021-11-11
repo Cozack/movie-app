@@ -49,8 +49,6 @@ registerLocaleData(localeUa, 'uk');
     MatSlideToggleModule,
     BrowserAnimationsModule,
 
-
-
   ],
   providers: [MoviesService, {provide:LOCALE_ID, useValue:'uk'}],
   bootstrap: [AppComponent]

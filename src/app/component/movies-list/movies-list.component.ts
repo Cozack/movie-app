@@ -11,18 +11,27 @@ export class MoviesListComponent implements OnInit {
 
   filteredString?: string;
   sortMenu: '';
-
+  gridListSwitch = true
 
   constructor() {
   }
 
   ngOnInit(): void {
-
-
   }
 
-  budgeCount():any {
+  budgeCount(): any {
     let items = JSON.parse(<string>localStorage.getItem('wishList'));
     return items.length
+  }
+
+  targetDisable() {
+    if (!localStorage.getItem('grid-list')) {
+      localStorage.setItem('grid-list', 'grid')
+    }
+    if (!this.gridListSwitch) {
+      localStorage.setItem('grid-list', 'list')
+    } else localStorage.setItem('grid-list', 'grid')
+
+    this.gridListSwitch = !this.gridListSwitch
   }
 }

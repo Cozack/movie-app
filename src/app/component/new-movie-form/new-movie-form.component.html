@@ -1,7 +1,5 @@
-
 <div class="card-body">
   <form [formGroup]="movieForm" (ngSubmit)="onSumbmit()">
-<!--    <input type="hidden" [(ngModel)]="movies.id" " />-->
     <div class="form-group col-12">
       <label for="formFile" class="form-label">Add Images</label>
       <input type="file" id="formFile" formControlName="poster_url" (change)="onChange($event)">
@@ -9,28 +7,28 @@
     <div *ngIf="myImage">
       <img [src]="myImage" style="width: 150px; height:150px" alt="">
     </div>
-
-  <div class="form-group col-12">
-    <label id="name" class="form-label">Name</label>
-    <input type="text" class="form-control" formControlName="name">
-    <span *ngIf="!movieName.valid && (movieName.touched || movieSubmitted)" class="error-block" style="color: red">
+    <div class="form-group col-12">
+      <label id="name" class="form-label">Name</label>
+      <input type="text" class="form-control" formControlName="name">
+      <span *ngIf="!movieName.valid && (movieName.touched || movieSubmitted)" class="error-block" style="color: red">
       Please provide name
     </span>
-  </div>
-  <div class="form-group col-12">
-    <label id="year" class="form-label">Year</label>
-    <input type="text" class="form-control" formControlName="year">
-    <span *ngIf="!movieYear.valid && (movieYear.touched || movieSubmitted)" class="error-block" style="color: red">
+    </div>
+    <div class="form-group col-12">
+      <label id="year" class="form-label">Year</label>
+      <input type="text" class="form-control" formControlName="year">
+      <span *ngIf="!movieYear.valid && (movieYear.touched || movieSubmitted)" class="error-block" style="color: red">
       Please provide year
     </span>
-  </div>
-  <div class="form-group col-12">
-    <label id="cash_fees" class="form-label">Cash Fees</label>
-    <input type="text" class="form-control" formControlName="cash_fees">
-    <span *ngIf="!movieCashFees.valid && (movieCashFees.touched || movieSubmitted)" class="error-block" style="color: red">
+    </div>
+    <div class="form-group col-12">
+      <label id="cash_fees" class="form-label">Cash Fees</label>
+      <input type="text" class="form-control" formControlName="cash_fees">
+      <span *ngIf="!movieCashFees.valid && (movieCashFees.touched || movieSubmitted)" class="error-block"
+            style="color: red">
       Please provide movie cash fees
     </span>
-  </div>
+    </div>
     <div class="form-group col-12">
       <button type="submit" class="btn btn-primary">Save</button>
       <button type="reset" class="btn btn-secondary ml-2" style="margin-left: 10px">Reset</button>

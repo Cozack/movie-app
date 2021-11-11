@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ALLMOVIES} from "./moviesList";
-import {IMovieInfo} from "./models";
 import {MoviesService} from "./services/movies.service";
-import {FilmsService} from "./services/films.service";
 
 @Component({
   selector: 'app-root',
@@ -11,20 +9,19 @@ import {FilmsService} from "./services/films.service";
 })
 export class AppComponent implements OnInit {
 
- allMovies = ALLMOVIES;
+  allMovies = ALLMOVIES;
 
   title = 'movie-app';
 
-  constructor(private movieService:MoviesService) {
+  constructor(private movieService: MoviesService) {
   }
 
   ngOnInit() {
-  this.isEmptyLocalStorage()
+    this.isEmptyLocalStorage()
   }
 
-
-  isEmptyLocalStorage () {
-   this.movieService.isEmptyLocalStorage(this.allMovies)
+  isEmptyLocalStorage() {
+    this.movieService.isEmptyLocalStorage(this.allMovies)
   }
 
 }

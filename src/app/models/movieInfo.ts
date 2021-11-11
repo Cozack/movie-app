@@ -6,5 +6,4 @@ export interface IMovieInfo {
   year:number;
   cash_fees?:any;
   date?:any;
-  wishlist?:boolean;
 }

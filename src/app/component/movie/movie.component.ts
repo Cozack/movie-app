@@ -11,7 +11,7 @@ import {WishListService} from "../../services/wish-list.service";
 export class MovieComponent implements OnInit {
   @Input()
   movie: IMovieInfo;
-  isAddedToWishList:boolean=false
+  isAddedToWishList: boolean = false
 
 
   constructor(private router: Router,
@@ -20,15 +20,21 @@ export class MovieComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.inActiveWishListButton(this.movie.id)
   }
+
+  inActiveWishListButton(id: any): void {
+    let items = JSON.parse(<string>localStorage.getItem('wishList'));
+    this.isAddedToWishList = !items.some((e: any) => e.id === id);
+    console.log(this.isAddedToWishList)
+  }
+
 
   goToDetails(): void {
     this.router.navigate(['movie', this.movie.id], {relativeTo: this.activatedRoute, state: this.movie})
   }
 
-
-  addToWishList(product:any) {
+  addToWishList(product: any) {
     this.wishListService.addToWishList(product);
   }
 
@@ -36,13 +42,8 @@ export class MovieComponent implements OnInit {
     this.wishListService.removeFromWishList(id)
   }
 
-  inActiveWishListButton(id:any):boolean {
-    let items = JSON.parse(<string>localStorage.getItem('wishList'));
-    if ( items.filter((item: any) => item.id === id)) {
-
-     return   items = true
-    }
-    return items = false
-console.log(items)
+  refreshPage(){
+    window.location.reload();
   }
+
 }

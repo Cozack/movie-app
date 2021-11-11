@@ -35,18 +35,6 @@
   flex-direction: column;
 }
 
-.movie__price {
-  background:linear-gradient(to bottom, #A9C9FF 0%, #FFBBEC 100%);
-  flex: 0 0 50px;
-  font-size: 18px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: rgb(255, 255, 255);
-  writing-mode: vertical-lr;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .movie__title {
   display: flex;
@@ -62,25 +50,6 @@
 
 .fa-fire {
   color: salmon;
-}
-
-.movie__tag {
-  font-size: 10px;
-  color: #fff;
-  padding: 2px 7px;
-  border-radius: 100px;
-  margin-right: 8px;
-  display: block;
-  text-transform: uppercase;
-
-}
-
-.movie__tag--1 {
-  background-color: #A9C9FF;
-}
-
-.movie__tag--2 {
-  background-color:#FFBBEC;
 }
 
 .movie__description {
@@ -104,9 +73,6 @@
   font-size: 18px;
 }
 
-.icons-red {
-  color: salmon;
-}
 .icons-grey {
   color: grey;
 }

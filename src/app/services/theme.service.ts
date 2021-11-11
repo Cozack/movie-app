@@ -28,7 +28,7 @@ export class ThemeService {
     return this.colorTheme === 'dark-mode';
   }
 
-  private setColorTheme(theme:any) {
+  private setColorTheme(theme: any) {
     this.colorTheme = theme;
     localStorage.setItem('theme-color', theme);
   }

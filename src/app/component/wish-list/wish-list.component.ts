@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WishListService} from "../../services/wish-list.service";
 
 @Component({
@@ -9,21 +9,17 @@ import {WishListService} from "../../services/wish-list.service";
 export class WishListComponent implements OnInit {
   movieFromWishList = JSON.parse(<string>localStorage.getItem('wishList'))
 
-  constructor(private wishListService:WishListService) { }
-
-  ngOnInit(): void {
-    if (!localStorage.getItem('wishList')) {
-      console.log('no movies');
-
-    } else {
-      this.movieFromWishList = JSON.parse(localStorage.getItem('wishList') || '{}');
-    }
+  constructor(private wishListService: WishListService) {
   }
 
-  removeFromWishList (id:any) {
+  ngOnInit(): void {
+  }
+
+  removeFromWishList(id: any) {
     this.wishListService.removeFromWishList(id)
-  };
-   refreshPage(){
+  }
+
+  refreshPage() {
     window.location.reload();
   }
 }
