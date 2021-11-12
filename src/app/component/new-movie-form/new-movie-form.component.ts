@@ -72,7 +72,7 @@ export class NewMovieFormComponent implements OnInit {
 
   movieData(): IMovieInfo {
     return this.movie = {
-      name: this.movieName.value,
+      name: this.movieName.value.charAt(0).toUpperCase() + this.movieName.value.slice(1),
       year: this.movieYear.value,
       cash_fees: this.numFormatter(this.movieCashFees.value),
       poster_url: this.myImage,

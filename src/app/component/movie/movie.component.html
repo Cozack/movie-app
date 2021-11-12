@@ -12,7 +12,7 @@
          <div style="display: flex; justify-content: space-between">
            <button  (click)="goToDetails()" class="details-btn">Details</button>
            <div style="display: flex; justify-content: space-evenly">
-             <button [disabled]=!isAddedToWishList
+             <button [disabled]="!isAddedToWishList"
                      (click)="addToWishList(movie); refreshPage()" style="border: none; margin-right: 5px" >
                <i class="fas fa-heart  form-control"
                    mat-raised-button

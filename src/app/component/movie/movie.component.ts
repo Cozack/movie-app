@@ -20,10 +20,10 @@ export class MovieComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.inActiveWishListButton(this.movie.id)
+    this.isActiveWishListButton(this.movie.id)
   }
 
-  inActiveWishListButton(id: any): void {
+  isActiveWishListButton(id: any): void {
     let items = JSON.parse(<string>localStorage.getItem('wishList'));
     this.isAddedToWishList = !items.some((e: any) => e.id === id);
     console.log(this.isAddedToWishList)

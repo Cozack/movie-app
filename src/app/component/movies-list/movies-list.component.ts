@@ -9,29 +9,29 @@ export class MoviesListComponent implements OnInit {
 
   storage = JSON.parse(<string>localStorage.getItem('Movies'))
 
-  filteredString?: string;
-  sortMenu: '';
-  gridListSwitch = true
+  filteredString: string = '';
+  sortMenu = '';
+  gridListSwitch:boolean = true;
+  date = new Date();
+
+
 
   constructor() {
   }
 
   ngOnInit(): void {
+    this.gridListSwitch = JSON.parse(localStorage.getItem('grid-list') || '{}')
+
+  }
+
+  gridListDisable() {
+    this.gridListSwitch = !this.gridListSwitch
+    localStorage.setItem('grid-list', JSON.stringify(this.gridListSwitch))
+
   }
 
   budgeCount(): any {
     let items = JSON.parse(<string>localStorage.getItem('wishList'));
     return items.length
-  }
-
-  targetDisable() {
-    if (!localStorage.getItem('grid-list')) {
-      localStorage.setItem('grid-list', 'grid')
-    }
-    if (!this.gridListSwitch) {
-      localStorage.setItem('grid-list', 'list')
-    } else localStorage.setItem('grid-list', 'grid')
-
-    this.gridListSwitch = !this.gridListSwitch
   }
 }

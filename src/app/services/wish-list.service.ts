@@ -20,10 +20,9 @@ export class WishListService {
 
   addToWishList(movie: IMovieInfo) {
     this.items.pipe(
-      take(1),
-      map((products: any) => {
-        products.push(movie);
-        localStorage.setItem('wishList', JSON.stringify(products));
+      map((value: any) => {
+        value.push(movie);
+        localStorage.setItem('wishList', JSON.stringify(value));
       }),
     ).subscribe();
   }
