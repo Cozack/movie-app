@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import 'rxjs/add/observable/of';
 import {IMovieInfo} from "../models";
 
 @Injectable({
